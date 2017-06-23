@@ -61,6 +61,7 @@ export class FavorlistPage {
   }
   setFilteredItems() {
     this.activityList = this.activityFilter.filterItems(this.search_key);
+    // git test
   }
   addType(index) {
     if (this.favorList.length < 5) {
