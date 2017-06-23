@@ -1,0 +1,73 @@
+page-favorlist {
+    .nav-icon {
+        max-width: 36px;
+    }
+    .small-icon {
+        max-width: 20px;
+    }
+
+    .list-ios ion-item-sliding {
+        background: transparent;
+    }
+    .list-md ion-item-sliding {
+        background: transparent;
+    }
+    .list-wp ion-item-sliding {
+        background: transparent;
+    }
+
+    .list-ios ion-item-options {
+        border-bottom-color: transparent
+    }
+    .label{
+        margin:0px;
+    }
+    .item-inner .item-inner ion-reorder {
+display: none;
+}
+    .label-md{
+        margin:0px;
+    }
+    .list-md ion-item-options {
+        border-bottom-color: transparent
+    }
+    .list-wp ion-item-options {
+        border-bottom-color: transparent
+    }
+
+    .list-ios .item-block .item-inner {
+        border-bottom-color: transparent
+    }
+    .list-md .item-block .item-inner {
+        border-bottom-color: transparent
+    }
+    .list-wp .item-block .item-inner {
+        border-bottom-color: transparent
+    }
+
+    .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+        border-bottom-color: transparent
+    }
+    .ion-reorder ion-icon {
+        color: white;
+    }
+    .searchbar-md .searchbar-input{
+        padding: 2px 55px;
+        background-color: rgba(50,50,50,0.5);
+        color:#eee
+    }
+    .searchbar-md .searchbar-search-icon{
+        top:6px;
+    }
+    .spinner-container {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }    
+    ion-scroll .scroll-content{
+        padding: 0px!important;
+    }
+    .topline{
+        border-top: 1px gray solid;
+    }
+}

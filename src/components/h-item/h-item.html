@@ -1,0 +1,39 @@
+<ion-row>
+  <ion-col style="max-width: 30px;" text-center>
+    <ion-icon class="top">
+      <img src="{{type}}" class="main-item">
+    </ion-icon>
+  </ion-col>
+  <ion-col style="min-width: 110px;">
+    <ion-row>{{caption}}</ion-row>
+    <ion-row style="color: grey">{{date}}</ion-row>
+  </ion-col>
+  <ion-col style="max-width: 20px;">
+    <ion-row class="float" style="max-height: 15px;">
+      <ion-icon>
+        <img src="assets/icon/Zeit_negativ.png" class="main-item">
+      </ion-icon>
+    </ion-row>
+    <ion-row class="float" style="max-height: 15px;">
+      <ion-icon>
+        <img src="assets/icon/Ort_negativ.png" class="main-item">
+      </ion-icon>
+    </ion-row>
+  </ion-col>
+  <ion-col>
+    <ion-row>
+      {{time}}
+    </ion-row>
+    <ion-row style="color: grey">
+      {{location}}
+    </ion-row>
+  </ion-col>
+  <ion-col style="max-width: 20px;" text-center>
+    <ion-icon class="bottom">
+      <img src="{{weather}}" class="main-item">
+    </ion-icon>
+  </ion-col>
+  <ion-col text-right>
+    {{distance}}
+  </ion-col>
+</ion-row>

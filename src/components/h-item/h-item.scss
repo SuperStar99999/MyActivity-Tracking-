@@ -1,0 +1,27 @@
+h-item {
+    color: white;
+    font-size:10px;
+    ion-icon.top {
+        position: absolute;
+        top: 8px;
+        left: 0;
+        right: 0;
+    }
+    ion-icon.bottom {
+        position: absolute;
+        bottom: 8px;
+        left: 0;
+        right: 0;
+    }
+    ion-row {
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+    ion-col.float {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+    ion-row.float {
+        padding: 0
+    }
+}

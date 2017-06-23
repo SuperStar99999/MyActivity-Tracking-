@@ -1,0 +1,23 @@
+page-forgot {
+    .toolbar-background-md {
+        background: transparent;
+    }
+    .toolbar-background-ios {
+        background: transparent;
+    }
+    .bar-button-default-md {
+        color: $leftColor;
+    }
+
+    .forgot-logo {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        margin-top: 64px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    ion-input {
+        color: white;
+    }
+}

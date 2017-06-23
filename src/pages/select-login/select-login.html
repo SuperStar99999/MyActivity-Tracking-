@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="splash-bg" scroll="false">
+  <div class="select-logo logo-mini"></div>
+  <div class="select-button" padding flex>
+    <ion-col center text-center padding block><ion-note>
+        REGISTRIERE DICH VIA
+    </ion-note></ion-col>
+    <button ion-button block (click)="login()" class="signup gradient-bg" color="light" activated>E-MAIL ADDRESSE</button>
+    <ion-col center text-center padding><ion-note>
+      ODER VIA
+    </ion-note></ion-col>
+    <button ion-button block (click)="onFBSignup()" class="onFBSignup">FACEBOOK</button>
+  </div>
+</ion-content>

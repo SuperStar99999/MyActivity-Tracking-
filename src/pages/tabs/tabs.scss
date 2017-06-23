@@ -1,0 +1,29 @@
+page-tabs {
+	.tabs-ios .tabbar {
+		background: $bgColor;
+	}
+	.tabs-md .tabbar {
+		background: $bgColor;
+	}
+	.tabs-wp .tabbar {
+		background: $bgColor;
+	}
+	.tabs-md .tab-button {
+		color: white;
+	}
+	.tabs-ios .tab-button {
+		color: white;
+	}
+	.tabs-wp .tab-button {
+		color: white;
+	}
+	.tabs-md .tab-button-icon {
+		color: white;
+	}
+	.tabs-ios .tab-button-icon {
+		color: white;
+	}
+	.tabs-wp .tab-button-icon {
+		color: white;
+	}
+}

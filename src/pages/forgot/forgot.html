@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ pageTitle }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="main-bg" padding no-bounce disable-scroll>
+  <div class="forgot-logo logo-mini"></div>
+  <br>
+  <form (submit)="sendMail()" padding>
+    <ion-list>
+      <ion-item>
+        <ion-input type="email" [(ngModel)]="email" name="email" color="light" placeholder="E-MAIL ADRESSE"></ion-input>
+      </ion-item>
+      <br>
+      <div padding>
+        <button ion-button class="signup gradient-bg" block>E-Mail senden</button>
+      </div>
+    </ion-list>
+  </form>
+</ion-content>

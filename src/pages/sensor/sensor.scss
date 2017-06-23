@@ -1,0 +1,29 @@
+page-sensor {
+    .itemdiv{
+        background:#222;height:60px;border-radius:3px;padding:10px;margin:10px 0px 0px 0px;
+    }
+    .itemimg{
+        width:25%;float:left;height: 40px
+    }
+    .itemtitle{
+        float:left;width:45%;padding-left:10px;
+    }
+    .itemstatus{
+        color:#bbb;margin-top:5px;
+    }
+    .itemname{
+        color:#fff;
+    }
+    .pairdiv{
+        float:right;height:40px;width:30%;text-align:center;
+    }
+    .pairbtn{
+        float:right;height:40px;width:30%;background:#FF676D;border-radius:3px;color:#fff;text-align:center;font-size:16px;
+    }
+    .removebtn{
+        width:90%;height:45px;background:#FF676D;color:#fff;text-align:center;font-size:16px;border-radius:5px;margin:10px 5%;
+    }
+    .searchbtn{
+        width:90%;height:45px;background:#aaa;color:#FF676D;text-align:center;font-size:16px;border-radius:5px;margin:10px 5%;
+    }
+}

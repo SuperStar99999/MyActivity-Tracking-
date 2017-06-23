@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle >
+      <ion-icon class="nav-icon">
+        <img src="assets/icon/nav-menu.png">
+      </ion-icon>
+    </button>
+    <ion-title>
+      <ion-col center text-center>
+        <img src="assets/img/logo.png" class="logo-nav">
+      </ion-col>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="main">
+  <ion-fab top right edge>
+    <avatar></avatar>
+  </ion-fab>
+  <ion-slides pager>
+    <ion-slide>
+      <statistic-overview></statistic-overview>
+    </ion-slide>
+    <ion-slide>
+      <statistic-week></statistic-week>
+    </ion-slide>
+    <ion-slide>
+      <statistic-month></statistic-month>
+    </ion-slide>
+    <ion-slide>
+      <statistic-year></statistic-year>
+    </ion-slide>
+    <ion-slide>
+      <statistic-list></statistic-list>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

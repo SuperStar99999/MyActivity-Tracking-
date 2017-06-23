@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <ion-col center text-center>
+        <img src="assets/img/logo.png" class="logo-nav">
+      </ion-col>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list #list id="list" padding style="margin: 0px;">
+    <ion-row class="my-underline">
+      <ion-col class="ion-seg">
+        <div>
+          <label><b>{{time.min | number : '2.0-0'}}:{{time.sec | number : '2.0-0'}}</b></label><br>
+          <label class="small">Zeit</label>
+        </div>
+      </ion-col>
+      <div class="line-vertical"></div>
+      <ion-col class="ion-seg">
+        <div>
+          <label><b>{{totaldistance | number : '1.3-3'}}</b></label><br>
+          <label class="small">km Distanz</label>
+        </div>
+      </ion-col>
+      <div class="line-vertical"></div>
+      <ion-col class="ion-seg">
+        <div>
+          <label><b>{{altitude | number : '1.2-2'}}</b></label><br>
+          <label class="small">Hohenmeter</label>
+        </div>
+      </ion-col>
+      <div class="line-vertical"></div>
+      <ion-col class="ion-seg">
+        <div>
+          <label><b>ECHO</b></label><br>
+          <label class="small">fgr</label>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-item no-lines>
+      <label class="large">{{speed | number : '1.2-2'}}</label>
+      <span right>KM/H</span>
+    </ion-item>
+    <ion-row>
+      <ion-col class="ion-seg">
+        <label class="mid">{{getPace() | number : '1.2-2'}}</label><br>
+      </ion-col>
+      <ion-col class="ion-seg">
+        <label class="mid">{{bpm}} BPM</label><br>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+  <!--<div style="width:100%;height:75%;border:2px red solid">-->
+    <div #map id="map"></div>
+  <!--</div>-->
+
+
+</ion-content>
+<ion-footer>
+  <button ion-button class="signup gradient-bg btn-stop" block (click)="stopActivity()">
+      PAUSE ODER STOPPEN >>
+    </button>
+</ion-footer>

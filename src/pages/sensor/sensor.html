@@ -1,0 +1,37 @@
+<!--
+  Generated template for the Sensor page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>SENSORENS</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="main-bg" padding>
+  <button id="search" (tap)="scanSensors()" *ngIf="!isconnected" class="searchbtn">
+    Search Sensors
+  </button>
+
+  <div id="status" style="color:#fff">{{scanstatus}}</div>  
+  <div class="itemdiv" *ngFor="let sensor of sensors">
+    <img src="assets/icon/polar.png" class="itemimg"/>
+    <div class="itemtitle">
+      <div id="sensorname" class="itemname">{{sensor.name}}</div>
+      <div id="sensorid" class="itemstatus">{{sensor.id}}</div>
+    </div>
+    <button class="pairbtn" *ngIf="!isconnected" (tap)="connectSensor(sensor)">
+      PAIR
+    </button>
+    <!--<div class="pairdiv" *ngIf="isconnected">
+      <div class="itemname">Battery</div>
+      <div id="sensorbattery" class="itemstatus">Low</div>
+    </div>-->
+  </div>
+
+  <button id="remove" *ngIf="isconnected" (tap)="unpair()" class="removebtn">
+    REMOVE PAIRING
+  </button>
+</ion-content>

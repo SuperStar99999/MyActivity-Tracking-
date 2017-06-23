@@ -1,0 +1,30 @@
+page-select-login {
+  .select-logo {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-top: 64px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .fb-login {
+      background: #1D599E;
+      color: white;
+  }
+  .splash-bg {
+    background: url('../assets/img/logo_bg.jpg') no-repeat transparent;
+    background-size: 100%;
+  }
+  .select-button {
+    position: absolute;
+    bottom: 160px;
+    left: 16px;
+    right: 16px;
+  }
+  .signup {
+    color: white;
+  }
+  .onFBSignup {
+    background: #0066EE;
+  }
+}

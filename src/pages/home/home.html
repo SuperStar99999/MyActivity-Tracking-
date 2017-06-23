@@ -1,0 +1,89 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle >
+      <ion-icon class="nav-icon">
+        <img src="assets/icon/nav-menu.png">
+      </ion-icon>
+    </button>
+    <ion-title>
+      <ion-col center text-center>
+        <img src="assets/img/logo.png" class="logo-nav">
+      </ion-col>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="main-bg" padding no-bounce disable-scroll>
+  <ion-fab top right edge>
+    <avatar></avatar>
+  </ion-fab>
+  <br>
+  <ion-list>
+    <ion-row>
+      <ion-col center text-center>
+        <h-btn (tap)="gotoSensor()" [caption]="'Sensoren'" [icon]="'assets/icon/Sensoren_negativ.png'"></h-btn>
+      </ion-col>
+      <ion-col center text-center>
+        <h-btn [caption]="'Einstellungen'" [icon]="'assets/icon/Einstellungen_negativ.png'"></h-btn>
+      </ion-col>
+      <ion-col center text-center>
+        <h-btn [caption]="'Navigation'" [icon]="'assets/icon/Navigation_negativ.png'"></h-btn>
+      </ion-col>
+    </ion-row>
+    <br>
+    <ion-row>
+      <ion-col center text-center>
+        <h-btn [caption]="'Coach'" [icon]="'assets/icon/Coach_negativ.png'"></h-btn>
+      </ion-col>
+      <ion-col center text-center>
+        <h-btn (tap)="gotoMusic()" [caption]="'Musik'" [icon]="'assets/icon/Musik_negativ.png'"></h-btn>
+      </ion-col>
+    </ion-row>
+    <div class="container-bottom">
+      <ion-row>
+        <ion-col>
+          <label class="white-text">
+            Lege direky los, 
+            wahle eine Route eder
+            ein raing aus
+          </label>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+      </ion-row>
+      <ion-row class="padding-h">
+        <ion-col class="ion-seg">
+          <button ion-button block clear color="light" class="seg-button">
+            <div>
+              <label>NAVIGATION ></label>
+              <br>
+              <label class="bold"><b>aus</b></label>
+            </div>
+          </button>
+        </ion-col>
+        <div class="line-vertical"></div>
+        <ion-col class="ion-seg">
+          <button ion-button block clear color="light" class="seg-button">
+            <div>
+              <label>NAVIGATION ></label>
+              <br>
+              <label class="bold"><b>aus</b></label>
+            </div>
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-col center text-center>
+        <ion-label mini color="light" class="seg-button" (tap)="gotoFavorlist()">AKTIVITAT ></ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-slides pager (ionSlideDidChange)="slideChanged()">
+          <ion-slide *ngFor="let favor of favorList"><h1 class="gradient-text">{{favor}}</h1><br></ion-slide>
+        </ion-slides>
+      </ion-col>
+      <button ion-button class="signup gradient-bg btn-start" block (click)="startActivity()">
+        LOS!
+      </button>
+    </div>
+  </ion-list>
+</ion-content>

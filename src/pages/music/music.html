@@ -1,0 +1,76 @@
+<!--
+  Generated template for the Music page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <span style="float:left">
+      <ion-title>Play List</ion-title>
+    </span>
+    <span (tap)="gotoBrowser()" style="float:right">
+      <ion-title>Browser</ion-title>
+    </span>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="main-bg">
+  <ion-scroll scrollY="true" style="height:75%;width:100%">
+    <div style="padding-top:100px;width:100%" *ngIf="isEmpty">
+      <div style="margin:auto;text-align:center">
+        <img src="assets/img/empty.png" style="height:100px;width:100px" />
+        <h5 style="color:gray">Playlist is Empty!</h5>
+      </div>
+    </div>
+
+    <div class="musiclist" *ngFor="let track of playlist?.tracks; let i = index">
+      <img class="musicicon" src="assets/img/mp3.png" />
+      <div class="musictitle">
+        {{track.name}}
+      </div>
+      <button class="rmbtn" (click)="deleteTrack(i)">Remove</button>
+      <div class="line"></div>
+    </div>
+
+  </ion-scroll>
+
+  <div *ngIf="!isEmpty" style="height:25%;width:100%;background-color: rgba(50,50,50,0.4);padding-top:10px">
+    <div class="currenttitle">
+      {{title}}
+    </div>
+    <hr>
+    <div style="width:100%;">
+      <div class="timeduration">
+        {{current}}
+      </div>
+      <div style="width:70%;float:left">
+        <ion-range [(ngModel)]="progressbar" debounce="300" (ionChange)="gotoSeek($event)" min='0' max='500' style="padding:0px;margin:0px;width:100%"></ion-range>
+      </div>
+      <div class="timeduration">
+        {{total}}
+      </div>
+    </div>
+    <div style="width:100%">
+      <div style="width:20%;float:left;text-align:center;padding-top:10px" (tap)="changeRepeat()">
+        <ion-icon *ngIf="!isRepeat" name="ios-repeat" style="color:white;font-size:30px"></ion-icon>
+        <ion-icon *ngIf="isRepeat" name="ios-repeat" style="color:#FF676D;font-size:30px"></ion-icon>
+      </div>
+      <div style="width:20%;float:left;text-align:center;padding-top:5px" (tap)="prevTrack()">
+        <img src="assets/icon/prev.png" style="width:40px;height:40px" />
+      </div>
+      <div style="width:20%;float:left;text-align:center" (tap)="play()">
+        <img *ngIf="!isPlaying" src="assets/icon/play.png" style="width:50px;height:50px" />
+        <img *ngIf="isPlaying" src="assets/icon/pause.png" style="width:50px;height:50px" />
+      </div>
+      <div style="width:20%;float:left;text-align:center;padding-top:5px" (tap)="nextTrack()">
+        <img src="assets/icon/next.png" style="width:40px;height:40px" />
+      </div>
+      <div style="width:20%;float:left;text-align:center;padding-top:10px" (tap)="changeShuffle()">
+        <ion-icon *ngIf="!isShuffle" name="ios-shuffle" style="color:white;font-size:30px"></ion-icon>
+        <ion-icon *ngIf="isShuffle" name="ios-shuffle" style="color:#FF676D;font-size:30px"></ion-icon>
+      </div>
+    </div>
+    <!--<button ion-button full clear (click)="play()">Play</button>-->
+  </div>
+</ion-content>

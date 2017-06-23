@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title color="light">MEIN PROFIL</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="main-bg" padding>
+  <ion-list>
+    <ion-row no-lines>
+      <ion-col width-100 center text-center>
+        <img *ngIf="userProfile" class="file-bg-input-label" [src]="avatarImage" onError="this.src='assets/icon/profile.png'">
+        <div class="file-bg-input-label file-bg-input-label_div">
+          <input type="file" class="file-upload-input" (change)="avatarChange(avatar)" accept="image/*" #avatar>
+        </div>
+        <img *ngIf="userProfile.gender" src="assets/icon/Weiblich_negativ.png" style="width: 24px;" (click)="changeMale()">
+        <img *ngIf="!userProfile.gender" src="assets/icon/male.png" style="width: 24px;" (click)="changeMale()">
+        <h1 *ngIf="userProfile.displayName" class="gradient-text" (click)="namePrompt()"><b>{{userProfile.displayName}}</b></h1>
+        <h1 *ngIf="!userProfile.displayName" class="gradient-text" (click)="namePrompt()"><b>Clarissa Shields</b></h1>
+      </ion-col>
+    </ion-row>
+    <ion-item no-lines class="err">
+      <ion-row>
+        <ion-col width-49 class="ion-seg" center text-center>
+          <button ion-button clear color="light" (click)="weightPrompt()">
+            <div>
+              <label style="font-size: 8px;">GEWICHT</label><br>
+              <label style="font-size: 24px;" class="bold">{{userProfile.weight}} kg</label>
+            </div>
+          </button>
+        </ion-col>
+        <div class="line-vertical"></div>
+        <ion-col width-49 class="ion-seg" center text-center>
+          <button ion-button clear color="light" (click)="heightPrompt()">
+            <div>
+              <label style="font-size: 8px;">GROSSE</label><br>
+              <label style="font-size: 24px;" class="bold">{{userProfile.height}} cm</label>
+            </div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item class="white bold" no-lines style="font-size: 9px;">
+      <ion-icon name="settings"></ion-icon>&nbsp;&nbsp;MEINE FAVORISIERTEN AKTIVITAATEN >
+    </ion-item>
+    <ion-item class="white bold" no-lines *ngFor="let favor of userProfile.favor; let i = index">
+      <ion-label>{{i+1}}. {{favor}}</ion-label>
+    </ion-item>
+    <!--<ion-item class="white bold" no-lines>
+      <ion-label>2. Wandern</ion-label>
+    </ion-item>
+    <ion-item class="white bold" no-lines>
+      <ion-label>3. American</ion-label>
+    </ion-item>
+    <ion-item class="white bold" no-lines>
+      <ion-label>4. Golfen Football</ion-label>
+    </ion-item>
+    <ion-item class="white bold err" no-lines>
+      <ion-label>5. Ping Pong</ion-label>
+    </ion-item>-->
+  </ion-list>
+  <ion-list style="border-bottom: 1px solid #dedede;">
+    <ion-item class="white">
+      <ion-label stacked>EMAIL ADDRESSE</ion-label>
+      <ion-input disabled="true" type="text" [(ngModel)]="userProfile.provider.email"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="no-line">
+    <ion-item color="light" class="err white" no-lines>
+      <ion-label stacked>ADDRESSE</ion-label>
+      <ion-textarea [(ngModel)]="userProfile.address"></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <!--<ion-col center text-center class="white">
+      <h-btn (click)="update()" [caption]="'PROFIL AKTUALISIEREN'" [icon]="'assets/icon/bearbeiten_negativ.png'"></h-btn>
+      <ion-item no-lines></ion-item>
+    </ion-col>-->
+    <div text-center>
+      <button ion-button round color="#FF676D" (click)="saveprofile()">SPAREN</button>
+      <button ion-button round color="dark" (click)="logout()">ABMELDEN</button>
+    </div>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,5 @@
+<button ion-fab (click)="onProfile()" style="background: url('/assets/icon/profile.png')">
+  <img *ngIf="!users.getCurrentUser()" class="avatar" src="assets/icon/profile.png">
+  <img *ngIf="users.getCurrentUser()" class="avatar" src="{{users.getCurrentUser().avatar}}"
+      onError="this.src='assets/icon/profile.png'">
+</button>

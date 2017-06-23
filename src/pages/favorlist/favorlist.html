@@ -1,0 +1,75 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon class="nav-icon">
+        <img src="assets/icon/nav-menu.png">
+      </ion-icon>
+    </button>
+        <ion-title>
+            <ion-col center text-center>
+                <img src="assets/img/logo.png" class="logo-nav">
+            </ion-col>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content class="main-bg" padding no-bounce disable-scroll>
+    <ion-fab top right edge>
+        <avatar></avatar>
+    </ion-fab>
+
+    <ion-list style="margin-bottom:0px;height:10%;">
+        <ion-item no-lines class="err">
+            <ion-row>
+                <ion-row center text-center style="margin:auto">
+                    <img src="assets/icon/favoroff.png" style="width:20px"> &nbsp;&nbsp;
+                    <span style="color: grey;">FAVORITEN</span>
+                </ion-row>
+            </ion-row>
+        </ion-item>
+    </ion-list>
+
+    <ion-list reorder="true" (ionItemReorder)="$event.applyTo(favorList)" style="margin-bottom:0px;height:50%;">
+        <ion-item *ngFor="let favor of favorList; let i=index" style="border-bottom: 1px gray solid">
+            <ion-item-sliding no-lines>
+                <ion-item style="padding:0px">
+                    <ion-row>
+                        <ion-col style="width:70%;">
+                            <span style="color: white;  font-weight: bold;">{{favor}}</span>
+                        </ion-col>
+                        <ion-col text-right>
+                            <ion-icon class="small-icon">
+                                <img src="assets/icon/Favoriten.png">
+                            </ion-icon>
+                        </ion-col>
+                    </ion-row>
+                </ion-item>
+                <ion-item-options side="right">
+                    <button ion-button color="primary" (tap)="delItem(i)">    
+                    <ion-icon name="close"></ion-icon>
+                </button>
+                </ion-item-options>
+            </ion-item-sliding>
+        </ion-item>
+    </ion-list>
+    <ion-searchbar [(ngModel)]="search_key" [formControl]="searchControl" (ionInput)="setFilteredItems()" placeholder="Filter Activity"
+        style=" height:10%;"></ion-searchbar>
+
+    <ion-scroll scrollY="true" style="width:100%;height:30%;padding:0px;margin:0px">
+        <div *ngIf="searching" class="spinner-container">
+            <ion-spinner></ion-spinner>
+        </div>
+        <ion-list style="padding:0px;margin:0px;padding-top:5px">
+            <ion-item *ngFor="let item of activityList; let i=index" style="width:100%;min-height:25px;">
+                <div style="width:100%;height:25px;" (tap)="addType(i)">
+                    <div  [ngClass]="{'topline': item.first}" style="padding-top:2px;height:25px;text-align:center;color:#fff;width:10%;float:left;">{{item.first}}</div>
+                    <div style="padding-top:2px;height:25px;padding-left:10px;color:#fff;width:65%;float:left;border-top:1px gray solid">{{item.title}}</div>
+                    <div style="padding-top:2px;height:25px;width:15%;float:left;border-top:1px gray solid"><img src={{item.icon}} style="height:20px" /></div>
+                    <div style="padding-top:2px;height:25px;width:10%;float:left;text-align:right;border-top:1px gray solid">
+                        <img *ngIf="item.favor" src="assets/icon/favoron.png" style="height:20px" />
+                        <img *ngIf="!item.favor" src="assets/icon/favoroff.png" style="height:20px" />
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-scroll>
+</ion-content>

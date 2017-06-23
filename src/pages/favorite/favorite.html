@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon class="nav-icon">
+        <img src="assets/icon/nav-menu.png">
+      </ion-icon>
+    </button>
+    <ion-title>
+      <ion-col center text-center>
+        <img src="assets/img/logo.png" class="logo-nav">
+      </ion-col>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="main-bg" padding no-bounce disable-scroll>
+  <ion-fab top right edge>
+    <avatar></avatar>
+  </ion-fab>
+  <br>
+  <ion-list>
+    <ion-item no-lines>
+       
+      <ion-row>
+        <ion-row center text-center style="margin:auto">
+          <img src="assets/icon/favoroff.png" style="width:20px"> &nbsp;&nbsp;
+          <span style="color: grey;">FAVORITEN</span>
+        </ion-row>
+      </ion-row>
+    </ion-item>
+    <ion-item no-lines class="err">
+      <p style="color: white;  font-weight: bold; padding-left: 5px;">HINZUFUGEN ></p>
+    </ion-item>
+  </ion-list>
+  <ion-list reorder="true">
+    <ion-item>
+    <ion-item-sliding no-lines>
+      <ion-item style="padding:0px">
+        <ion-row>
+          <ion-col>
+            <h2 style="color: white;">Pushups</h2>
+            <h3 style="color: grey">Max</h3>
+          </ion-col>
+          <ion-col>
+            <span style="color: white;  font-weight: bold;">111 AI</span>
+          </ion-col>
+          <ion-col center text-center>
+            <ion-icon class="small-icon">
+              <img src="assets/icon/Favoriten.png">
+            </ion-icon>
+          </ion-col>
+          <ion-col>
+            <span style="color: white;  font-weight: bold;">12 km</span>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="primary">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+    </ion-item>
+  </ion-list>
+</ion-content>

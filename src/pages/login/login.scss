@@ -1,0 +1,36 @@
+page-login {
+    .splash-bg {
+        background: url('../assets/img/logo_bg.jpg') no-repeat transparent;
+        background-size: 100%;
+    }
+    .select-button {
+        position: absolute;
+        bottom: 160px;
+        left: 16px;
+        right: 16px;
+    }
+    .signup {
+        color: white;
+    }
+    ::-webkit-input-placeholder {
+        text-align: center;
+    }
+
+    :-moz-placeholder { /* Firefox 18- */
+        text-align: center;  
+    }
+
+    ::-moz-placeholder {  /* Firefox 19+ */
+        text-align: center;  
+    }
+
+    :-ms-input-placeholder {  
+        text-align: center; 
+    }
+    .white {
+        color: white;
+    }
+    .signup {
+        color: white;
+    }
+}

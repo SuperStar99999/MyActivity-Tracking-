@@ -1,0 +1,40 @@
+page-welcome {
+  .toolbar-background-md {
+      background: transparent;
+  }
+  .toolbar-background-ios {
+      background: transparent;
+  }
+  .bar-button-default-md {
+      color: $leftColor;
+  }
+  .select-logo {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-top: 64px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .splash-bg {
+    background: url('../assets/img/logo_bg.jpg') no-repeat transparent;
+    background-size: 100%;
+  }
+  .select-button {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+  }
+  .signup {
+    color: white;
+  }
+  .login {
+    background: grey;
+    color: white;
+  }
+  .mid-text {
+    font-size: 48px;
+    color: white;
+  }
+}

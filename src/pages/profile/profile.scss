@@ -1,0 +1,47 @@
+page-profile {
+    .line-vertical {
+        min-width: 1px; height: 48px; margin-top: 12px; background: #777
+    }
+    .white {
+        color: white;
+    }
+    .bold {
+        font-weight: bold;
+    }
+    .list-md .item-input.input-has-focus:last-child {
+        border-bottom-color: transparent;
+        box-shadow: none;
+    }
+    .list-md .item-input:last-child {
+        border-bottom: 0px solid #dedede;
+    }
+    .list-ios {
+        margin: 0;
+    }
+    .list-ios > .item-block:first-child {
+        border-top: 0px solid #c8c7cc;
+    }
+    .file-bg-input-label {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        margin-left: 24px;
+        cursor: pointer;
+    }
+    .file-bg-input-label_div {
+        position: absolute;
+        top: 0px;
+        left: calc(50% - 80px);
+        margin-left: -2px;
+    }
+    .file-upload-input {
+        opacity: 0;
+        width: 160px;
+        height: 160px;
+    }
+    .ion-seg {
+        padding: 0;
+        color: white;
+        // border-bottom: 1px solid #AAA;
+    }
+}

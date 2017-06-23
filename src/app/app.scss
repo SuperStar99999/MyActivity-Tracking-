@@ -1,0 +1,161 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+$bgColor: #413F45;
+$leftColor: #FF676D;
+$rightColor: #FF966D;
+
+.main-bg {
+    background: url('../assets/img/logo_bg.jpg') no-repeat transparent;
+    background-size: 100%;
+}
+.toolbar-title{
+	color: $leftColor;
+}
+.toolbar-background-md {
+	background: transparent;
+}
+.toolbar-background-ios {
+	background: transparent;
+}
+.toolbar-background-wp {
+	background: transparent;
+}
+.bar-button-default-md {
+	color: $leftColor;
+}
+
+.logo-nav {
+	max-height: 24px;
+}
+.main-item {
+	max-height: 24px;
+}
+.gradient-text {
+	background: -webkit-linear-gradient(left, $leftColor, $leftColor, $rightColor, $rightColor);
+	background: -webkit-linear-gradient(left, $leftColor, $leftColor, $rightColor, $rightColor); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(left, $leftColor, $leftColor, $rightColor, $rightColor); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(left, $leftColor, $leftColor, $rightColor, $rightColor); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to right, $leftColor, $leftColor, $rightColor, $rightColor); /* Standard syntax */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.gradient-bg {
+	background: -webkit-linear-gradient(left, $leftColor, $leftColor, $rightColor, $rightColor);
+	background: -webkit-linear-gradient(left, $leftColor, $leftColor, $rightColor, $rightColor); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(left, $leftColor, $leftColor, $rightColor, $rightColor); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(left, $leftColor, $leftColor, $rightColor, $rightColor); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to right, $leftColor, $leftColor, $rightColor, $rightColor); /* Standard syntax */
+}
+.menu-bg {
+	background: $bgColor;
+}
+.menu-button {
+	background: transparent;
+	color: white;
+    font-weight: bolder;
+    font-size: 24px;
+}
+.menu-button-sm {
+	background: transparent;
+	color: white;
+    font-weight: bolder;
+    font-size: 12px;
+}
+.menu-logo {
+    max-width: 200px;
+    margin-top: 32px;
+    margin-bottom: 48px;
+}
+.logo-mini {
+	background: url('../assets/img/logo.png') no-repeat transparent;
+	min-height: 100px;
+    background-size: contain;
+	background-position: center;
+}
+.logo-mini2 {
+	background: url('../assets/img/logo.png') no-repeat transparent;
+	min-height: 60px;
+    background-size: contain;
+	background-position: center;
+}
+.toolbar-ios ion-title {
+	color: white;
+}
+.toolbar-ios ion-title {
+	color: white;
+}
+.toolbar-ios ion-title {
+	color: white;
+}
+.tabs-ios .tab-button-icon::before {
+	content: url(../assets/icon/empty.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.ion-ios-home:before {
+    background: url(../assets/icon/Statistik_farbig.png);
+}
+.ion-ios-home-outline:before {
+    background: url(../assets/icon/Statistik.png);
+}
+.ion-ios-search:before {
+    background: url(../assets/icon/Calisthenic_farbig.png);
+}
+.ion-ios-search-outline:before {
+    background: url(../assets/icon/Calisthenic.png);
+}
+.ion-ios-menu:before {
+    background: url(../assets/icon/Aktivitäten_farbig.png);
+}
+.ion-ios-menu-outline:before {
+    background: url(../assets/icon/Aktivitäten.png);
+}
+.ion-ios-add:before {
+    background: url(../assets/icon/Routen_farbig.png);
+}
+.ion-ios-add-outline:before {
+    background: url(../assets/icon/Routen.png);
+}
+.ion-ios-cog:before {
+    background: url(../assets/icon/Favoriten_farbig.png);
+}
+.ion-ios-cog-outline:before {
+    background: url(../assets/icon/Favoriten.png);
+}
+.item-icon {
+	width: 24px;
+	height: 24px;
+}
+.item-md {
+	background: transparent;
+}
+.item-ios {
+	background: transparent;
+}
+.item-wp {
+	background: transparent;
+}
+.err {
+	padding-right: 16px;
+	display: inline-block;
+	position:relative;
+	background: url("../assets/img/wave.png") bottom repeat-x;
+}
+ion-app._gmaps_cdv_ .nav-decor{
+  background-color: transparent !important;
+}

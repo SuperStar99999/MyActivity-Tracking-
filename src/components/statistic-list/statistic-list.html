@@ -1,0 +1,53 @@
+<ion-content class="main-bg statistic">
+  <br>
+  <div class="main-bg">
+    <ion-list style="padding-left: 16px; padding-right: 16px;">
+      <ion-item left no-lines padding>
+        <ion-label color="light" left>
+          <b>Alle Aktivitaten und<br>Workouts diese Woche</b>
+        </ion-label>
+      </ion-item>
+      <ion-row np-lines>
+        <ion-col width-50 center text-center>
+          <h-btn-3 [caption]="'SORTIEREN NACH'" [subcaption]="'ORTSCHAFT'" [icon]="'assets/icon/Ort_negativ.png'"></h-btn-3>
+        </ion-col>
+        <ion-col width-50 center text-center>
+          <h-btn-3 [caption]="'SORTIEREN NACH'" [subcaption]="'DAUER'" [icon]="'assets/icon/Zeit_negativ.png'"></h-btn-3>
+        </ion-col>
+      </ion-row>
+      <ion-item>
+        <ion-searchbar color="light" mode="ios" value=""></ion-searchbar>
+      </ion-item>
+    </ion-list>
+    <ion-list style="padding-left: 16px; padding-right: 16px;">
+      <ion-col no-lines class="err" width-100 text-center><span style="color: white">Juli 2016</span></ion-col>
+      <ion-item no-lines style="border-bottom: 1px solid grey; padding-left: 0" *ngFor="let activity of activityArray; let i = index;">
+        <h-item [type]="'assets/icon/Zeit_negativ.png'"
+            [caption]="'Rodfahren'" [date]="'Mi 26.10.2016 | 16:31'"
+            [time]="activity.time" [location]="'Rorschach SG'"
+            [weather]="'assets/icon/Zeit_negativ.png'"
+            [distance]="activity.distance"
+            (click)="onDetail(i);"></h-item>
+      </ion-item>
+    </ion-list>
+    <br>
+    <ion-list style="padding-left: 16px; padding-right: 16px;">
+      <ion-col no-lines class="err" width-100 text-center><span style="color: white">Juli 2016</span></ion-col>
+      
+      <ion-item no-lines style="border-bottom: 1px solid grey; padding-left: 0" *ngFor="let activity of activityArray; let i = index;">
+        <h-item [type]="'assets/icon/Zeit_negativ.png'"
+            [caption]="'Rodfahren'" [date]="'Mi 26.10.2016 | 16:31'"
+            [time]="activity.time" [location]="'Rorschach SG'"
+            [weather]="'assets/icon/Zeit_negativ.png'"
+            [distance]="activity.distance"
+            (click)="onDetail(i);"></h-item>
+      </ion-item>
+    </ion-list>
+    <div #map id="map"></div>
+    <br>
+    <div class="err">
+      <canvas #lineCanvas></canvas>
+      <br>
+    </div>
+  </div>
+</ion-content>

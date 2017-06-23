@@ -1,0 +1,54 @@
+page-favorite {
+     .nav-icon {
+        max-width: 36px;
+    }
+    .small-icon {
+        max-width: 20px;
+    }
+
+    .list-ios ion-item-sliding {
+        background: transparent;
+    }
+    .list-md ion-item-sliding {
+        background: transparent;
+    }
+    .list-wp ion-item-sliding {
+        background: transparent;
+    }
+
+    .list-ios ion-item-options {
+        border-bottom-color: transparent
+    }
+    .label{
+        margin:0px;
+    }
+    .item-inner .item-inner ion-reorder {
+display: none;
+}
+    .label-md{
+        margin:0px;
+    }
+    .list-md ion-item-options {
+        border-bottom-color: transparent
+    }
+    .list-wp ion-item-options {
+        border-bottom-color: transparent
+    }
+
+    .list-ios .item-block .item-inner {
+        border-bottom-color: transparent
+    }
+    .list-md .item-block .item-inner {
+        border-bottom-color: transparent
+    }
+    .list-wp .item-block .item-inner {
+        border-bottom-color: transparent
+    }
+
+    .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+        border-bottom-color: transparent
+    }
+    ion-reorder ion-icon {
+        color: white;
+    }
+}

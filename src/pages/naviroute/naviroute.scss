@@ -1,0 +1,41 @@
+page-naviroute {
+    .seg-button {
+        text-transform: none;
+        font-size: 10px;
+    }
+    label.bold {
+        font-size: 13px;
+    }
+    .nav-icon {
+        max-width: 36px;
+    }
+    .ion-seg {
+        padding: 0;
+        border-bottom: 1px solid #AAA;
+    }
+    .white-text {
+        color: white;
+    }
+    .container-bottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    .padding-h {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .line-vertical {
+        min-width: 1px; height: 25px; margin-top: 12px; background: #AAA
+    }
+    .swiper-pagination-bullet {
+        background: white;
+    }
+    .btn-start {
+        margin: 0;
+        font-size: 24px;
+        font-weight: bold;
+        padding: 24px;
+    }
+}

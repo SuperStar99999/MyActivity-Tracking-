@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="splash-bg" scroll="false">
+  <form (submit)="doSignup()">
+    <div class="select-logo logo-mini2"></div>
+    <br>
+    <ion-list>
+      <ion-item no-lines>
+        <p center text-center>REGISTRIERE DICH VIA</p>
+      </ion-item>
+      <ion-item>
+        <ion-input class="white" type="text" placeholder="E_MAIL ADRESS" [(ngModel)]="account.email" name="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input class="white" type="password" placeholder="PASSWORT" [(ngModel)]="account.password" name="password"></ion-input>
+      </ion-item>
+      <br>
+      <div padding>
+        <button ion-button class="signup gradient-bg" block>REGISTRIEREN</button>
+      </div>
+      <div padding>
+        <button ion-button block (click)="onFBSignup()" class="onFBSignup">FACEBOOK</button>
+      </div>
+    </ion-list>
+  </form>
+</ion-content>

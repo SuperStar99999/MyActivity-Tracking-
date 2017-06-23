@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon class="nav-icon">
+        <img src="assets/icon/nav-menu.png">
+      </ion-icon>
+    </button>
+    <ion-title>
+      <ion-col center text-center>
+        <img src="assets/img/logo.png" class="logo-nav">
+      </ion-col>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="main-bg" no-bounce disable-scroll>
+  <ion-fab top right edge>
+    <avatar></avatar>
+  </ion-fab>
+
+  <div (tap)="showActivities()" style="text-align:center;width:100%;height:10%;padding-top:20px;">
+    <div style="margin:auto">
+      <div style="color:gray">
+        <img src="assets/icon/Routen.png" style="width:15px;height:15px" /> Routen
+      </div>
+    </div>
+  </div>
+
+  <ion-list style="padding-left: 16px; padding-right: 16px;width:100%;height:15%;margin-bottom:0px;">
+    <ion-row np-lines>
+      <ion-col width-50 center text-center>
+        <h-btn-3 [caption]="'SORTIEREN NACH'" (tap)="sortbyCity()" [subcaption]="'ORTSCHAFT'" [icon]="'assets/icon/Ort_negativ.png'"></h-btn-3>
+      </ion-col>
+      <ion-col width-50 center text-center>
+        <h-btn-3 [caption]="'SORTIEREN NACH'" (tap)="sortbyDuration()" [subcaption]="'DAUER'" [icon]="'assets/icon/Zeit_negativ.png'"></h-btn-3>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+  <div style="margin-top:-2px;width:100%;height:2px;background-color:rgba(255,255,255, 0.5)"></div>
+  <ion-scroll scrollX="true" scrollY="true" style="width:100%;height:75%">
+    <div *ngFor="let activity of allActivities" (tap)="navigate(activity)" style="padding:0px;padding-top:10px">
+      <div style="display:block;width:100%;height:40px;">
+        <div style="width:15%;float:left">
+          <img src="assets/icon/Calisthenic.png" width="40px" />
+        </div>
+        <div style="width:30%;float:left">
+          <div style="color:white;font-size:18px;font-weight:bold;width:100%;overflow: hidden">{{activity.type}}</div>
+          <div style="color:white;font-size:10px;">{{activity.timestamp | date :'short'}} </div>
+        </div>
+        <div style="width:25%;float:left">
+          <div style="display:block;color:white;font-size:12px;margin-top:3px;width:100%;overflow: hidden;height:12px;overflow: hidden">
+            <img src="assets/icon/Zeit_negativ.png" width="12px" style="float:left" />
+            <b>&nbsp;{{activity.time/60 |number : '1.0-0'}}min {{activity.time%60 |number : '1.0-0'}}sec</b>
+          </div>
+          <div style="display:block;color:white;font-size:10px;margin-top:5px;width:100%;height:12px;overflow: hidden">
+            <img src="assets/icon/Ort_negativ.png" width="12px" style="float:left" /> &nbsp;{{activity.city}}
+          </div>
+        </div>
+        <div style="width:10%;height:40px;float:left">
+          <img src="assets/icon/rain.png" />
+        </div>
+        <div style="width:20%;text-align:center;margin-top:10px;float:left;color:white;font-size:16px;font-weight:bold">{{activity.distance | number : '1.2-2'}}km</div>
+      </div>
+      <div style="margin-left:5%;height:1px;width:90%;background-color:gray"></div>
+    </div>
+  </ion-scroll>
+</ion-content>

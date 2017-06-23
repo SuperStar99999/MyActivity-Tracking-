@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="splash-bg" scroll="false">
+  <div class="select-logo logo-mini2"></div>
+  <form>
+    <br>
+    <ion-list>
+      <ion-item no-lines>
+        <p center text-center>MELDE DICH AN VIA</p>
+      </ion-item>
+      <ion-item>
+        <ion-input class="white" type="text" placeholder="E_MAIL ADRESS" [(ngModel)]="account.email" name="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input class="white" type="password" placeholder="PASSWORT" [(ngModel)]="account.password" name="password"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item no-lines>
+        <p center text-center (click)="resetPassword()">DU HAST DEIN PASSWORT VERGESSEN</p>
+      </ion-item>
+      <div padding>
+        <button ion-button class="signup gradient-bg" block (click)="login()">ANMELDEN</button>
+      </div>
+      <br>
+    </ion-list>
+  </form>
+</ion-content>
