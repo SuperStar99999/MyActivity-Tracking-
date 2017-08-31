@@ -44,19 +44,19 @@ export class NaviroutePage {
   }
   navigate(activity: any) {
     this.nav.push(NavigatorPage, {
-      activity: activity.tracking
+      activity: activity.tracking,
+      type: activity.type
     });
     console.log(activity);
   }
   sortbyCity() {
-    this.loading = this.loadingCtrl.create({
-      content: 'Loading Activities...'
-    });
-    this.loading.present();
     this.sortKey = "time";
   }
 
   sortbyDuration() {
     this.sortKey = "time";
+  }
+  getMinutes(minute: any){
+    return Math.floor(minute / 60);
   }
 }

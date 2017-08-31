@@ -42,7 +42,7 @@ export class NavigatorPage {
   bpm = -1;
   cal = 0.0;
 
-  cityname = "";
+  city_name = "";
   map: any = null;
   totaldistance = 0.0000;
   polyline: any = null;
@@ -50,6 +50,7 @@ export class NavigatorPage {
   bpms = [];
   tracking = [];
   marker: any = null;
+  type = "";
   // offsetx = 0.000001;
   // offsety = 0.000001;
   prevpolyline: any = null;
@@ -79,7 +80,8 @@ export class NavigatorPage {
     });
     this.loading.present();
     this.activityId = navParams.get('activity');
-
+    this.type = navParams.get("type");
+    console.log(this.type);
   }
 
   ionViewDidLoad() {
@@ -262,9 +264,48 @@ export class NavigatorPage {
     }, 1000);
   }
 
+  getCityName() {
+    var _self = this;
+    this.geoFunc(function (addr) {
+      if (addr.length > 1) {
+        for (let i = 1; i < addr.length; i++) {
+          _self.city_name += addr[i];
+        }
+      }
+      console.log(this);
+      console.log("this variable" + _self.city_name);
+      console.log(addr);
+    });
+  }
+  geoFunc(callback) {
+    let geocoder = new google.maps.Geocoder();
+    var latlng = new google.maps.LatLng(this.locationTracker.lat, this.locationTracker.lng);
+    geocoder.geocode(
+      { 'latLng': latlng },
+      function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          if (results[0]) {
+            let add = results[0].formatted_address;
+            let value = add.split(",");
+            let count = value.length;
+            console.log(value);
+            callback(value[count - 4]);
+          }
+          else {
+            // alert("address not found");
+          }
+        }
+        else {
+          // alert("Geocoder failed due to: " + status);
+        }
+      }
+    );
+  }
+
   trackMap() {
     if (this.locationTracker.flag) {
       if (this.time.sec == 0 && this.time.min == 0) {
+        this.getCityName();
         this.updateTimer();
       }
 
@@ -463,8 +504,9 @@ export class NavigatorPage {
             activity.time = this.time.min * 60 + this.time.sec;
             activity.meanspeed = this.totaldistance * 3600 / activity.time;
             activity.tracking = "";// this.tracking;
+            activity.type = this.type;
             // activity.bpms = "";//this.bpms;
-            activity.city = this.cityname;
+            activity.city = this.city_name;
             this.activities.add(activity, this.users.uid, this.tracking, this.bpms);
             let loading = this.loadingCtrl.create({
               content: 'Saving Data...'

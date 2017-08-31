@@ -10,7 +10,7 @@ export class ActivityFilter {
     constructor(public http: Http) {
  
         this.items = [
-            {first:'', icon:"assets/icon/favoroff.png", favor:false, title: 'Laufen'},
+            {first:'', icon:"assets/icon/favoron.png", favor:false, title: 'Laufen'},
             {first:'', icon:"assets/icon/favoron.png", favor:false, title: 'Schwimmen'},
             {first:'A', icon:"assets/icon/favoron.png", favor:false, title: 'Aerobic'},
             {first:'', icon:"assets/icon/favoron.png", favor:false, title: 'American Football'},
